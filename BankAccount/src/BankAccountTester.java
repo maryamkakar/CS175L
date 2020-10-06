@@ -1,17 +1,35 @@
-
+import java.util.Scanner;
 public class BankAccountTester {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
 		
-		BankAccount myBankAccount = new BankAccount(1000);//invoked BankAccount code lines 12-15
+		System.out.println("Enter amount to start your account: ");
+		double newAmt = input.nextDouble();
 		
-		myBankAccount.withdraw(500);//runs BankAccount code lines 31-34
+		System.out.println("Enter Percentage of Interest: ");
+		double interest = input.nextDouble();
 		
-		myBankAccount.deposit(1500);//runs BankAccount code lines 21-24
-			
-		System.out.println(myBankAccount.getBalance());//runs BankAccount code lines 39-42
-				
+		BankAccount myBankAccount = new BankAccount(newAmt, interest);
 		
-	}
-
+		System.out.println("Enter Deposit Amount: ");
+		double Deposit = input.nextDouble();
+		myBankAccount.deposit(Deposit);
+		
+		System.out.println("Enter Withdraw Amount: ");
+		double Withdraw = input.nextDouble();
+		myBankAccount.withdraw(Withdraw);
+		
+		myBankAccount.calcInterest();
+		
+		System.out.println("Your Bank Account Balance is: " +myBankAccount.getBalance());
+		
+		
+		
+			}
 }
+		
+		
+		
+		
+
