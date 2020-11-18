@@ -30,7 +30,7 @@ public class BankAccount
     */
    public void calcInterest() 
    {
-	   
+	   balance = balance + (balance*interestPct);
    }
    /**
       Makes a withdrawal from this account, or charges a penalty if
